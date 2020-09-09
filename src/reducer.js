@@ -4,7 +4,6 @@ export const initialState = {
 
 
 const reducer = (state, action) => {
-    debugger
     switch (action.type) {
         case 'ADD_TO_BASKET':
             return {
