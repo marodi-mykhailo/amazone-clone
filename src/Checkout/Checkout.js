@@ -1,10 +1,9 @@
 import React from "react";
 import './Checkout.css'
-import Subtotal from "./Subtotal";
-import {useStateValue} from "./StateProvider";
-import CheckoutProduct from "./CheckoutProduct";
-import {getBasketTotal} from "./reducer";
-import CurrencyFormat from "react-currency-format";
+import CheckoutProduct from "./ChekoutProduct/CheckoutProduct";
+import Subtotal from "./Subtotal/Subtotal";
+import {useStateValue} from "../StateProvider/StateProvider";
+
 
 function Checkout() {
     const [{basket, user}, dispatch] = useStateValue()
