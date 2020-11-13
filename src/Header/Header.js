@@ -5,6 +5,7 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import {Link} from "react-router-dom";
 import {auth} from "../firebase/firebase";
 import {useStateValue} from "../StateProvider/StateProvider";
+import logo from '../assets/image/logo.png'
 
 function Header() {
     const [{basket, user}, dispatch] = useStateValue();
@@ -19,7 +20,7 @@ function Header() {
         <div className={'header'}>
             <Link to={'/'}>
                 <img className={'header__logo'}
-                     src={'https://pngimg.com/uploads/amazon/amazon_PNG11.png'}/>
+                     src={logo}/>
             </Link>
             <div className={'header__search'}>
                 <input className={"header__searchInput"}
@@ -43,7 +44,7 @@ function Header() {
                 <div className={'header__option'}>
 
                     <span className={'header__optionLineOne'}>Your</span>
-                    <span className={'header__optionLineTwo'}>Prime</span>
+                    <span className={'header__optionLineTwo'}>Account</span>
                 </div>
                 <Link to={'/checkout'}>
                     <div className={'header__optionBasket'}>
