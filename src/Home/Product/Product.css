@@ -54,6 +54,7 @@
     padding: 5px 10px;
     align-items: end;
     margin: 20px 0 0 auto;
+    cursor: pointer;
 }
 
 .btnWrapp {
