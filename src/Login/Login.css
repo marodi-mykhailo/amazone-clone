@@ -10,6 +10,9 @@
     margin: 20px auto;
     object-fit: contain;
     width: 100px;
+    background-color: black;
+    padding: 10px;
+    transform: scale(1.3);
 }
 
 .login__container {

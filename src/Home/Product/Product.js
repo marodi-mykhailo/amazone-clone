@@ -6,7 +6,7 @@ function Product({id, title, price, image, rating, description}) {
     const [state, dispatch] = useStateValue();
 
     const addToBasket = () => {
-        // dispathc the item into the data layer
+        // dispatch the item into the data layer
         dispatch({
             type: 'ADD_TO_BASKET',
             item: {
@@ -28,7 +28,7 @@ function Product({id, title, price, image, rating, description}) {
                     <strong>{price}</strong>
                 </p>
                 <div className="product__rating">
-                    {Array(rating).fill().map((_, i) => (<p>🌟</p>
+                    {Array(rating).fill().map((_, i) => (<p key={i}>🌟</p>
                     ))}
                 </div>
                 <p>

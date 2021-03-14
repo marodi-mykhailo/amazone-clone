@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import './Login.css'
 import {Link, useHistory} from "react-router-dom";
 import {auth} from "../firebase/firebase";
+import logo from '../assets/image/logo.png'
+
 
 
 function Login() {
@@ -12,21 +14,21 @@ function Login() {
     const signIn = e => {
         e.preventDefault();
         auth
-            .signInWithEmailAndPassword(email,password)
+            .signInWithEmailAndPassword(email, password)
             .then(auth => {
                 history.push('/')
             })
             .catch(error => alert(error.message))
 
     }
-    const register = e =>{
+    const register = e => {
         e.preventDefault();
 
         auth
             .createUserWithEmailAndPassword(email, password)
             .then((auth) => {
                 // it successfully created a new user with email and password
-                if(auth){
+                if (auth) {
                     history.push('/')
                 }
             })
@@ -36,7 +38,7 @@ function Login() {
     return (<div className={'login'}>
         <Link to={'/'}>
             <img className={'login__logo'}
-                 src={'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png'}
+                 src={logo}
                  alt={''}/>
         </Link>
         <div className={'login__container'}>
@@ -50,12 +52,12 @@ function Login() {
 
                 <button type={"submit"} onClick={signIn} className={'login__signInButton'}>Sign-in</button>
             </form>
-                <p>
-                    By signing-in you agree to the AMAZON FAKE CLONE Conditionals
-                </p>
-                <button onClick={register} className={"login__registerButton"}>
-                    Create your Amazon Account
-                </button>
+            <p>
+                By signing-in you agree to the Conditionals
+            </p>
+            <button onClick={register} className={"login__registerButton"}>
+                Create your Account
+            </button>
 
         </div>
     </div>)
